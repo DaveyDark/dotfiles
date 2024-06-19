@@ -1,0 +1,56 @@
+[colors.bright]
+black = "0x6D7070"
+blue = "0x1BA6FA"
+cyan = "0x73FBF1"
+green = "0xB8E466"
+magenta = "0xA578EA"
+red = "0xFF4352"
+white = "0xFEFEF8"
+yellow = "0xFFD750"
+
+[colors.normal]
+black = "0x0d0d0d"
+blue = "0x1BA6FA"
+cyan = "0x21DEEF"
+green = "0xA0E521"
+magenta = "0x8763B8"
+red = "0xFF301B"
+white = "0xEBEBEB"
+yellow = "0xFFC620"
+
+[colors.primary]
+background = "#1a1b26"
+foreground = "0xEBEBEB"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "hack"
+style = "Italic"
+
+[font.normal]
+family = "hack"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "spawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[scrolling]
+history = 50000
+
+[shell]
+program = "/bin/fish"
+
+[window]
+opacity = 0.1

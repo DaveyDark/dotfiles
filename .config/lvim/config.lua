@@ -1,0 +1,11 @@
+reload('user.options')
+reload('user.plugins')
+reload('user.lspconfig')
+reload('user.whichkey')
+reload('user.formatters')
+
+reload('plugin.presence')
+reload('plugin.rust-tools')
+reload('plugin.cmp')
+reload('plugin.copilot')
+reload('plugin.neorg')

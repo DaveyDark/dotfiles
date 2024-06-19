@@ -1,0 +1,46 @@
+#!/bin/bash
+
+SCRIPTSDIR=$HOME/.config/hypr/scripts
+
+# Kill already running process
+_ps=(waybar mako)
+for _prs in "${_ps[@]}"; do
+	if [[ $(pidof ${_prs}) ]]; then
+		killall -9 ${_prs}
+	fi
+done
+
+# Apply themes
+${SCRIPTSDIR}/gtkthemes &
+
+# Lauch notification daemon
+${SCRIPTSDIR}/notifications &
+
+# Lauch statusbar (waybar)
+${SCRIPTSDIR}/statusbar &
+
+# Xauthority
+${SCRIPTSDIR}/xauthority &
+
+# Import theme settings
+${SCRIPTSDIR}/import-gsettings.sh &
+
+# set wallpaper
+swww init &
+# randomize
+# swww img $(find /home/daveydark/.config/wallpapers/ -type f | shuf -n 1)
+# static
+swww img ~/.config/wallpapers/029.gif -f Nearest
+
+#insync start &
+#dropbox &
+#telegram-desktop &
+discord --start-minimized &
+steam-runtime --silent &
+swayosd &
+ydotoold &
+# xwaylandvideobridge &
+nm-applet --indicator &
+/usr/lib/kdeconnectd &
+kdeconnect-indicator &
+#variety &
