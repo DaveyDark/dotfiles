@@ -109,3 +109,5 @@ zoxide init fish | source
 
 export EDITOR='lvim'
 export VISUAL='lvide'
+
+thefuck --alias | source

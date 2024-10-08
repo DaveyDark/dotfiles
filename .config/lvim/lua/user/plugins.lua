@@ -23,7 +23,6 @@ lvim.plugins = {
       event = "BufRead",
       config = function() require "lsp_signature".on_attach() end,
     },
-    -- TODO: Setup outlines
     {
       "simrat39/symbols-outline.nvim",
       config = function()
@@ -62,6 +61,8 @@ lvim.plugins = {
         require("copilot_cmp").setup()
       end
     },
+    "normen/vim-pio",
+
 
 
     -- Themes
@@ -113,6 +114,20 @@ lvim.plugins = {
       "turbio/bracey.vim",
       cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
       build = "npm install --prefix server",
+    },
+    {
+      'akinsho/flutter-tools.nvim',
+      lazy = false,
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'stevearc/dressing.nvim', -- optional for vim.ui.select
+      },
+      config = true,
+    },
+    {
+      "pmizio/typescript-tools.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+      opts = {},
     },
     {
       "norcalli/nvim-colorizer.lua",

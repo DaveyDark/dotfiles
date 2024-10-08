@@ -14,6 +14,8 @@
   "copilot-cmp": { "branch": "master", "commit": "72fbaa03695779f8349be3ac54fa8bd77eed3ee3" },
   "copilot.lua": { "branch": "master", "commit": "f7612f5af4a7d7615babf43ab1e67a2d790c13a6" },
   "dracula.nvim": { "branch": "main", "commit": "8d8bddb8814c3e7e62d80dda65a9876f97eb699c" },
+  "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
+  "flutter-tools.nvim": { "branch": "main", "commit": "5aa227fa083fd740184b55b5220dfabc24a25cc7" },
   "friendly-snippets": { "branch": "main", "commit": "dd2fd1281d4b22e7b4a5bfafa3e142d958e251f2" },
   "gitsigns.nvim": { "branch": "main", "commit": "805610a9393fa231f2c2b49cb521bfa413fadb3d" },
   "gruvbox": { "branch": "master", "commit": "f1ecde848f0cdba877acb0c740320568252cc482" },
@@ -65,7 +67,9 @@
   "tokyodark.nvim": { "branch": "master", "commit": "14bc1b3e596878a10647af7c82de7736300f3322" },
   "tokyonight.nvim": { "branch": "main", "commit": "b9b494fa7f7bbf2fe0747b47fa290fb7a4eddcc7" },
   "trouble.nvim": { "branch": "main", "commit": "e0b35a273df58b03612255783cf475a782ede7e0" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "5da4d695d66f676eb6ea766b946e86f93baaafe7" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
+  "vim-pio": { "branch": "master", "commit": "6bba1d4e4c57f3bfadd0b3163652985a61764ab7" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

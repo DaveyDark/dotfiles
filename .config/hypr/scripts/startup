@@ -25,19 +25,18 @@ ${SCRIPTSDIR}/xauthority &
 # Import theme settings
 ${SCRIPTSDIR}/import-gsettings.sh &
 
+# Allow running apps as root
+xhost si:localuser:root
+
 # set wallpaper
 swww init &
-# randomize
-# swww img $(find /home/daveydark/.config/wallpapers/ -type f | shuf -n 1)
-# static
-swww img ~/.config/wallpapers/029.gif -f Nearest
 
 #insync start &
 #dropbox &
 #telegram-desktop &
 discord --start-minimized &
-steam-runtime --silent &
-swayosd &
+steam-native -silent &
+swayosd-server &
 ydotoold &
 # xwaylandvideobridge &
 nm-applet --indicator &
