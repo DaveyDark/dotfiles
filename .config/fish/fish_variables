@@ -32,4 +32,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/daveydark/\x2erustup/toolchains/esp/xtensa\x2desp\x2delf/esp\x2d13\x2e2\x2e0_20230928/xtensa\x2desp\x2delf/bin\x1e/home/daveydark/\x2epub\x2dcache/bin\x1e/usr/bin/flutter/bin\x1e/home/daveydark/Android/Sdk/platform\x2dtools\x1e/home/daveydark/Android/Sdk/emulator\x1e/home/daveydark/\x2ecargo/bin\x1e/home/daveydark/\x2elocal/bin\x1e/usr/local/bin
+SETUVAR fish_user_paths:/home/daveydark/\x2econfig/composer/vendor/bin\x1e/home/daveydark/\x2erustup/toolchains/esp/xtensa\x2desp\x2delf/esp\x2d13\x2e2\x2e0_20230928/xtensa\x2desp\x2delf/bin\x1e/home/daveydark/\x2epub\x2dcache/bin\x1e/usr/bin/flutter/bin\x1e/home/daveydark/Android/Sdk/platform\x2dtools\x1e/home/daveydark/Android/Sdk/emulator\x1e/home/daveydark/\x2ecargo/bin\x1e/home/daveydark/\x2elocal/bin\x1e/usr/local/bin

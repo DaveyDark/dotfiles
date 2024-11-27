@@ -41,7 +41,7 @@ vim.g.transparency = 0.5
 -- Check if g:neovide exists
 if vim.g.neovide then
   -- Set the guifont for neovide
-  vim.cmd([[set guifont=SauceCodePro\ Nerd\ Font:h13.5]])
+  vim.cmd([[set guifont=SauceCodePro\ Nerd\ Font:h12]])
   -- vim.cmd([[set guifont=monospace:h11]])
   -- Neovide cursor animation length
   vim.g.neovide_cursor_animation_length = 0.10
