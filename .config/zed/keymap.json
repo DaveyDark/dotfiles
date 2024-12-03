@@ -1,0 +1,126 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // panel shortcuts
+      "ctrl-escape": "terminal_panel::ToggleFocus",
+      "alt-escape": "terminal_panel::ToggleFocus",
+      "alt-w": "outline_panel::ToggleFocus",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-c": "pane::CloseActiveItem",
+      "alt-d": "diagnostics::Deploy",
+      "alt-tab": "tab_switcher::Toggle",
+      "alt-t": "workspace::ToggleBottomDock",
+
+      // move focus between panes
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // Vim mode panel shortcuts
+      "space w": "outline_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space d": "diagnostics::Deploy",
+      "space c": "pane::CloseActiveItem",
+      "space a": "editor::ToggleCodeActions",
+      "space t": "workspace::ToggleBottomDock",
+
+      // Zed commands
+      "space z k": "zed::OpenKeymap",
+      "space z p": "projects::OpenRecent",
+      "space z s": "zed::OpenSettings",
+      "space z e": "zed::Extensions",
+      "space z t": "theme_selector::Toggle",
+      "space z q": "zed::Quit",
+
+      // Search shortcuts
+      "space s f": "file_finder::Toggle", // Search for files
+      "space s s": "project_symbols::Toggle", // Search for symbols
+      "space s t": "pane::DeploySearch", // Global search
+
+      // Switch tabs
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Editor && showing_code_actions",
+    "bindings": {
+      // Code actions
+      "k": "editor::ContextMenuPrev",
+      "j": "editor::ContextMenuNext",
+      "h": "editor::ContextMenuFirst",
+      "l": "editor::ContextMenuLast",
+      "space": "editor::ConfirmCodeAction"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      // Code Completions
+      "tab": "editor::ContextMenuPrev",
+      "shift-tab": "editor::ContextMenuNext",
+      "alt-tab": "editor::ContextMenuFirst",
+      "enter": "editor::ConfirmCompletion"
+    }
+  },
+  {
+    // Tab switcher
+    "context": "TabSwitcher",
+    "bindings": {
+      "shift-h": "menu::SelectPrev",
+      "shift-l": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // Move focus between panes
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
+    "context": "ProjectPanel || OutlinePanel",
+    "bindings": {
+      // Close panels
+      "alt-e": "workspace::ToggleLeftDock",
+      "alt-w": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleLeftDock",
+      "space w": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // Project panel shortcuts
+      "a": "project_panel::NewFile",
+      "d": "project_panel::Delete",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "r": "project_panel::Rename",
+      "p": "project_panel::Paste",
+      "l": "project_panel::OpenPermanent"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-t": "workspace::NewTerminal"
+    }
+  }
+]

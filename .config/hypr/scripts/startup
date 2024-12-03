@@ -42,4 +42,6 @@ ydotoold &
 nm-applet --indicator &
 /usr/lib/kdeconnectd &
 kdeconnect-indicator &
+wl-clip-persist --clipboard regular &
+ollama serve &
 #variety &

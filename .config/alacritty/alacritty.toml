@@ -49,8 +49,10 @@ mods = "Super|Shift"
 [scrolling]
 history = 50000
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 [window]
 opacity = 0.5
+
+[terminal]

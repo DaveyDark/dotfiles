@@ -84,7 +84,6 @@ lvim.plugins = {
     "iamcco/markdown-preview.nvim",
     {
       "folke/trouble.nvim",
-      cmd = "TroubleToggle",
     },
     {
       "ethanholz/nvim-lastplace",
@@ -146,5 +145,21 @@ lvim.plugins = {
     {
       "tpope/vim-surround",
     },
+    {
+      "mistricky/codesnap.nvim",
+      build = "make build_generator",
+      opts = {
+        save_path = "~/Pictures/codesnap",
+        has_breadcrumbs = true,
+        bg_theme = "grape",
+        watermark = "",
+        bg_x_padding = 61,
+        bg_y_padding = 41,
+        bg_padding = nil
+      },
+    },
+    {
+      "YannickFricke/codestats.nvim",
+    }
   },
 }
