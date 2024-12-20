@@ -11,13 +11,16 @@
     "bindings": {
       // panel shortcuts
       "ctrl-escape": "terminal_panel::ToggleFocus",
-      "alt-escape": "terminal_panel::ToggleFocus",
+      "alt-escape": "workspace::ToggleBottomDock",
       "alt-w": "outline_panel::ToggleFocus",
       "alt-e": "project_panel::ToggleFocus",
       "alt-c": "pane::CloseActiveItem",
       "alt-d": "diagnostics::Deploy",
       "alt-tab": "tab_switcher::Toggle",
       "alt-t": "workspace::ToggleBottomDock",
+
+      // Save without format
+      "ctrl-shift-s": "workspace::SaveWithoutFormat",
 
       // move focus between panes
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
@@ -36,6 +39,13 @@
       "space c": "pane::CloseActiveItem",
       "space a": "editor::ToggleCodeActions",
       "space t": "workspace::ToggleBottomDock",
+      "space l": "assistant::ToggleFocus",
+      "space r": "editor::Rename",
+      "ctrl-a": "buffer_search::Dismiss",
+
+      // Git commands
+      "space g b": "branches::OpenRecent",
+      "space g B": "editor::ToggleGitBlame",
 
       // Zed commands
       "space z k": "zed::OpenKeymap",
@@ -47,12 +57,47 @@
 
       // Search shortcuts
       "space s f": "file_finder::Toggle", // Search for files
-      "space s s": "project_symbols::Toggle", // Search for symbols
+      "space s S": "project_symbols::Toggle", // Search for symbols
+      "space s s": "outline::Toggle", // Search for symbols within buffer
       "space s t": "pane::DeploySearch", // Global search
+      "space s r": "editor::FindAllReferences", // Find all references
+
+      // Comment
+      "space /": "vim::ToggleComments",
+
+      // Split panes
+      "space v": "pane::SplitRight",
+      "space h": "pane::SplitDown",
+
+      // Go to
+      "gd": "editor::GoToDefinition",
+      "gD": "editor::GoToDeclaration",
+      "gf": "editor::GoToDefinitionSplit",
+      "gF": "editor::GoToDeclarationSplit",
+      "gh": "editor::GoToTypeDefinition",
+      "gj": "editor::GoToTypeDefinition",
+
+      // Hover
+      "?": "editor::Hover",
 
       // Switch tabs
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "space /": "vim::ToggleComments",
+      "space w": "outline_panel::ToggleFocus",
+      "space e": "project_panel::ToggleFocus",
+      "space d": "diagnostics::Deploy",
+      "space c": "pane::CloseActiveItem",
+      "space a": "editor::ToggleCodeActions",
+      "space t": "workspace::ToggleBottomDock",
+      "space l": "assistant::ToggleFocus",
+      "space r": "editor::Rename",
+      "ctrl-a": "buffer_search::Dismiss"
     }
   },
   {
@@ -70,8 +115,8 @@
     "context": "Editor && showing_completions",
     "bindings": {
       // Code Completions
-      "tab": "editor::ContextMenuPrev",
-      "shift-tab": "editor::ContextMenuNext",
+      "shift-tab": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext",
       "alt-tab": "editor::ContextMenuFirst",
       "enter": "editor::ConfirmCompletion"
     }
@@ -121,6 +166,30 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "EmptyPane",
+    "bindings": {
+      "space c": "pane::CloseActiveItem",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem"
+    }
+  },
+  {
+    "context": "AssistantPanel",
+    "bindings": {
+      "alt-m": "assistant::ToggleModelSelector"
+    }
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      // Find and replace key bindings
+      "alt-r": "search::ToggleReplace",
+      "enter": "search::ReplaceNext",
+      "ctrl-enter": "search::ReplaceAll",
+      "alt-c": "buffer_search::Dismiss"
     }
   }
 ]
