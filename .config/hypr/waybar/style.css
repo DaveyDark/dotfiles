@@ -1,3 +1,5 @@
+@define-color primary #EE3333;
+
 * {
   font-family: "JetBrainsMono", "Noto Sans", "Roboto Condensed", sans-serif;
   font-size: 14px;
@@ -47,7 +49,7 @@ window#waybar.hidden {
 #workspaces {
   border-radius: 4px;
   margin: 0px;
-  border: 2px solid #78bae7;
+  border: 2px solid @primary;
   border-top: none;
   border-radius: 0px 0px 20px 20px;
   padding: 0px 12px;
@@ -58,14 +60,14 @@ window#waybar.hidden {
 
 .modules-left {
   margin: 5px 0px 0px 5px;
-  background-color: #78bae7;
+  background-color: @primary;
   padding: 0px 4px;
   border-radius: 20px;
 }
 
 .modules-right {
   margin: 5px 0px 0px 5px;
-  background-color: #78bae7;
+  background-color: @primary;
   padding: 0px 4px;
   border-radius: 20px;
 }
@@ -96,16 +98,16 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-  /* border: 1px solid #78bae7; */
+  /* border: 1px solid @primary; */
   margin-right: 2px;
   border-radius: 0px;
   padding: 0px 5px;
-  color: #78bae7;
+  color: @primary;
   background-color: transparent;
 }
 
 #workspaces button.active {
-  background-color: #78bae7;
+  background-color: @primary;
   color: #111111;
 }
 

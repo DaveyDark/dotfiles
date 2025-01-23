@@ -61,7 +61,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 #aliases
 # alias clear='/usr/bin/clear && colorscript -r'
-alias clear='/usr/bin/clear && bullshit | awk \'{print $1}\' | figlet -t | lolcat -S 40 -p 10.0'
+alias clear='/usr/bin/clear && bullshit | awk \'{print $1}\' | figlet -t | lolcat -S 12 -p 10.0'
 alias mkdirc='mkdir $argv && cd '
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs

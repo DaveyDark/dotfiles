@@ -2,8 +2,8 @@
 
 # Use custom format
 format = """
-[┌────────>](bold cyan) $username in $hostname in $directory $python[|](bold cyan) $cmd_duration
-[└─>](bold cyan) """
+[┌────────>](bold red) $username in $hostname in $directory $python[|](bold red) $cmd_duration
+[└─>](bold red) """
 
 # Wait 10 milliseconds for starship to check files under the current directory.
 scan_timeout = 10
@@ -17,14 +17,14 @@ truncation_length = -1
 
 
 [hostname]
-style = "bold cyan"
+style = "bold red"
 ssh_only = false
 disabled = false
 format = "[$hostname]($style)"
 
 [username]
 show_always = true
-style_user = "bold cyan"
+style_user = "bold red"
 format = "[$user]($style)"
 
 [cmd_duration]
@@ -33,5 +33,5 @@ disabled = false
 format = "[took $duration](italic green)"
 
 [python]
-style = "cyan"
+style = "red"
 format = '[(\($virtualenv\) )]($style) '

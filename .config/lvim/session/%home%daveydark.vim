@@ -13,13 +13,13 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 .config/kitty/kitty.conf
+badd +0 .config/fish/config.fish
 argglobal
 %argdel
-$argadd .config/kitty/kitty.conf
-edit .config/kitty/kitty.conf
+$argadd .config/fish/config.fish
+edit .config/fish/config.fish
 argglobal
-setlocal fdm=marker
+setlocal fdm=manual
 setlocal fde=
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -27,12 +27,14 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 16) / 32)
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 64 - ((15 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 64
+normal! 087|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -46,7 +48,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -82,7 +82,20 @@
 
       // Switch tabs
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePrevItem"
+      "shift-h": "pane::ActivatePrevItem",
+
+      // Move lines
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "alt-h": "editor::MoveLeft",
+      "alt-l": "editor::MoveRight",
+      "alt-k": "editor::MoveUp",
+      "alt-j": "editor::MoveDown"
     }
   },
   {
@@ -97,7 +110,10 @@
       "space t": "workspace::ToggleBottomDock",
       "space l": "assistant::ToggleFocus",
       "space r": "editor::Rename",
-      "ctrl-a": "buffer_search::Dismiss"
+      "ctrl-a": "buffer_search::Dismiss",
+
+      // Vim surround
+      "shift-s": ["vim::PushOperator", { "AddSurrounds": {} }]
     }
   },
   {

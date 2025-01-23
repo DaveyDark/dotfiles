@@ -1,14 +1,14 @@
-@define-color cc-bg rgba(26, 27, 35, 1);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgb(17, 17, 30);
-@define-color noti-bg-darker rgb(20, 36, 70);
-@define-color noti-bg-hover rgb(27, 27, 50);
-@define-color noti-bg-focus rgba(27, 27, 40, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgba(169, 177, 177, 1);
-@define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
+@define-color cc-bg rgba(35, 27, 26, 1); /* Slightly reddish background */
+@define-color noti-border-color rgba(255, 77, 77, 0.15); /* Red-tinted border */
+@define-color noti-bg rgb(30, 17, 17); /* Dark red background */
+@define-color noti-bg-darker rgb(70, 20, 20); /* Darker red background */
+@define-color noti-bg-hover rgb(50, 27, 27); /* Hover state with lighter red */
+@define-color noti-bg-focus rgba(40, 27, 27, 0.6); /* Focused state with reddish tint */
+@define-color noti-close-bg rgba(255, 77, 77, 0.1); /* Subtle red close button */
+@define-color noti-close-bg-hover rgba(255, 77, 77, 0.15); /* Hover state for close button */
+@define-color text-color rgba(177, 169, 169, 1); /* Slightly reddish-gray text */
+@define-color text-color-disabled rgb(150, 125, 125); /* Muted reddish-gray for disabled text */
+@define-color bg-selected rgb(255, 0, 0); /* Bright red for selected elements */
 
 * {
   font-family: JetBrainsMono NFP;
@@ -37,7 +37,7 @@
   background: @cc-bg;
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid #78bae7;
+  border: 2px solid #ee3333;
   margin: 0;
 }
 
@@ -159,7 +159,7 @@
 
 .control-center {
   background: @cc-bg;
-  border: 2px solid #78bae7;
+  border: 2px solid #ee3333;
   border-radius: 5px;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .widget-title {
-  color: #78bae7;
+  color: #ee3333;
   background: @noti-bg-darker;
   padding: 5px 10px;
   margin: 10px 10px 5px 10px;
@@ -208,16 +208,16 @@
   margin: 5px 10px 10px 10px;
   border-radius: 5px;
   font-size: large;
-  color: #78bae7;
+  color: #ee3333;
 }
 
 .widget-dnd > switch {
   border-radius: 5px;
-  background: #78bae7;
+  background: #ee3333;
 }
 
 .widget-dnd > switch:checked {
-  background: #78bae7;
+  background: #ee3333;
   border: 1px solid #f7768e;
 }
 

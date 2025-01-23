@@ -35,7 +35,7 @@ swww init &
 #dropbox &
 #telegram-desktop &
 discord --start-minimized &
-steam-native -silent &
+steam -silent &
 swayosd-server &
 ydotoold &
 # xwaylandvideobridge &
@@ -44,4 +44,6 @@ nm-applet --indicator &
 kdeconnect-indicator &
 wl-clip-persist --clipboard regular &
 ollama serve &
-#variety &
+emote &
+
+$HOME/.local/bin/wakapi --config $HOME/.config/wakapi.yml &

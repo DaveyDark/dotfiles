@@ -26,7 +26,13 @@
     "shell": {
       "program": "fish"
     },
-    "font_size": 14
+    "font_size": 14,
+    "detect_venv": {
+      "on": {
+        "directories": [".venv", "venv"],
+        "activate_script": "fish"
+      }
+    }
   },
   "telemetry": {
     "diagnostics": false,
@@ -34,8 +40,21 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Ayu Dark",
+    "light": "Martianized",
     "dark": "One Dark"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
   },
   "relative_line_numbers": true,
   "soft_wrap": "prefer_line"
