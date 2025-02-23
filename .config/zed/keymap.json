@@ -30,18 +30,24 @@
     }
   },
   {
-    "context": "Editor && vim_mode == normal && !menu",
+    "context": "Editor && !menu && VimControl && vim_mode != insert",
     "bindings": {
-      // Vim mode panel shortcuts
+      // Common bindings between normal and visual modes
+      "space /": "vim::ToggleComments",
       "space w": "outline_panel::ToggleFocus",
       "space e": "project_panel::ToggleFocus",
       "space d": "diagnostics::Deploy",
       "space c": "pane::CloseActiveItem",
       "space a": "editor::ToggleCodeActions",
-      "space t": "workspace::ToggleBottomDock",
-      "space l": "assistant::ToggleFocus",
+      "space l": "workspace::ToggleRightDock",
       "space r": "editor::Rename",
-      "ctrl-a": "buffer_search::Dismiss",
+      "ctrl-a": "buffer_search::Dismiss"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space f": "editor::Format",
 
       // Git commands
       "space g b": "branches::OpenRecent",
@@ -61,9 +67,6 @@
       "space s s": "outline::Toggle", // Search for symbols within buffer
       "space s t": "pane::DeploySearch", // Global search
       "space s r": "editor::FindAllReferences", // Find all references
-
-      // Comment
-      "space /": "vim::ToggleComments",
 
       // Split panes
       "space v": "pane::SplitRight",
@@ -101,17 +104,6 @@
   {
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
-      "space /": "vim::ToggleComments",
-      "space w": "outline_panel::ToggleFocus",
-      "space e": "project_panel::ToggleFocus",
-      "space d": "diagnostics::Deploy",
-      "space c": "pane::CloseActiveItem",
-      "space a": "editor::ToggleCodeActions",
-      "space t": "workspace::ToggleBottomDock",
-      "space l": "assistant::ToggleFocus",
-      "space r": "editor::Rename",
-      "ctrl-a": "buffer_search::Dismiss",
-
       // Vim surround
       "shift-s": ["vim::PushOperator", { "AddSurrounds": {} }]
     }
@@ -195,7 +187,8 @@
   {
     "context": "AssistantPanel",
     "bindings": {
-      "alt-m": "assistant::ToggleModelSelector"
+      "alt-m": "assistant::ToggleModelSelector",
+      "alt-l": "workspace::ToggleRightDock"
     }
   },
   {

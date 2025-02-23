@@ -43,7 +43,8 @@ nm-applet --indicator &
 /usr/lib/kdeconnectd &
 kdeconnect-indicator &
 wl-clip-persist --clipboard regular &
-ollama serve &
+OLLAMA_ORIGINS='*' OLLAMA_HOST='0.0.0.0' ollama serve &
+QT_QPA_PLATFORM=wayland albert &
 emote &
 
 $HOME/.local/bin/wakapi --config $HOME/.config/wakapi.yml &

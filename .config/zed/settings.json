@@ -40,7 +40,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Martianized",
+    "light": "Hacker Night Red Force",
     "dark": "One Dark"
   },
   "languages": {
@@ -57,5 +57,9 @@
     }
   },
   "relative_line_numbers": true,
-  "soft_wrap": "prefer_line"
+  "soft_wrap": "prefer_line",
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  }
 }

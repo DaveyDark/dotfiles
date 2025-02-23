@@ -1,0 +1,17 @@
+{
+  "Default export functional component with types": {
+    "prefix": "rfcet",
+    "body": ["interface $1Props {
+      $2
+}
+
+export default function $1({ }: $1Props) {
+  return (
+    <>
+      $3
+    </>
+  );
+}"],
+    "description": "Default export functional component with types"
+  },
+}

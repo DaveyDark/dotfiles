@@ -107,7 +107,7 @@ starship init fish | source
 
 zoxide init fish | source
 
-export EDITOR='lvim'
-export VISUAL='lvide'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 thefuck --alias | source

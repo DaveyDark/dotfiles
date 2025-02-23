@@ -154,4 +154,4 @@ display-run: "";
 /*  me-accept-custom: "Control+MouseDPrimary";*/
 }
 @theme "/dev/null"
-@theme "/home/daveydark/.local/share/rofi/themes/rounded-nord-dark.rasi"
+@theme "/home/daveydark/.local/share/rofi/themes/rounded-red-dark.rasi"
