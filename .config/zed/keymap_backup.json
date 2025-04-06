@@ -7,7 +7,7 @@
 // from the command palette.
 [
   {
-    "context": "Workspace || Pane",
+    "context": "Workspace",
     "bindings": {
       // panel shortcuts
       "ctrl-escape": "terminal_panel::ToggleFocus",
@@ -23,10 +23,10 @@
       "ctrl-shift-s": "workspace::SaveWithoutFormat",
 
       // move focus between panes
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
   {
@@ -34,16 +34,14 @@
     "bindings": {
       // Common bindings between normal and visual modes
       "space /": "vim::ToggleComments",
-      "space a": "editor::ToggleCodeActions",
-      "space r": "editor::Rename",
-
-      // Pane shortcuts
       "space w": "outline_panel::ToggleFocus",
       "space g": "git_panel::ToggleFocus",
       "space e": "project_panel::ToggleFocus",
       "space d": "diagnostics::Deploy",
       "space c": "pane::CloseActiveItem",
+      "space a": "editor::ToggleCodeActions",
       "space l": "workspace::ToggleRightDock",
+      "space r": "editor::Rename",
       "ctrl-a": "buffer_search::Dismiss"
     }
   },
@@ -53,8 +51,8 @@
       "space f": "editor::Format",
 
       // Git commands
-      "space G b": "git::Branch",
-      "space G B": "git::Blame",
+      "space g b": "branches::OpenRecent",
+      "space g B": "editor::ToggleGitBlame",
 
       // Zed commands
       "space z k": "zed::OpenKeymap",
@@ -88,7 +86,7 @@
 
       // Switch tabs
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePreviousItem",
+      "shift-h": "pane::ActivatePrevItem",
 
       // Move lines
       "alt-k": "editor::MoveLineUp",
@@ -108,14 +106,14 @@
     "context": "Editor && vim_mode == visual && !menu",
     "bindings": {
       // Vim surround
-      "shift-s": ["vim::PushAddSurrounds", {}]
+      "shift-s": ["vim::PushOperator", { "AddSurrounds": {} }]
     }
   },
   {
     "context": "Editor && showing_code_actions",
     "bindings": {
       // Code actions
-      "k": "editor::ContextMenuPrevious",
+      "k": "editor::ContextMenuPrev",
       "j": "editor::ContextMenuNext",
       "h": "editor::ContextMenuFirst",
       "l": "editor::ContextMenuLast",
@@ -126,7 +124,7 @@
     "context": "Editor && showing_completions",
     "bindings": {
       // Code Completions
-      "shift-tab": "editor::ContextMenuPrevious",
+      "shift-tab": "editor::ContextMenuPrev",
       "tab": "editor::ContextMenuNext",
       "alt-tab": "editor::ContextMenuFirst",
       "enter": "editor::ConfirmCompletion"
@@ -136,7 +134,7 @@
     // Tab switcher
     "context": "TabSwitcher",
     "bindings": {
-      "shift-h": "menu::SelectPrevious",
+      "shift-h": "menu::SelectPrev",
       "shift-l": "menu::SelectNext"
     }
   },
@@ -144,10 +142,10 @@
     "context": "Editor",
     "bindings": {
       // Move focus between panes
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
     }
   },
   {
@@ -185,7 +183,7 @@
     "bindings": {
       "space c": "pane::CloseActiveItem",
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePreviousItem"
+      "shift-h": "pane::ActivatePrevItem"
     }
   },
   {
@@ -203,31 +201,6 @@
       "enter": "search::ReplaceNext",
       "ctrl-enter": "search::ReplaceAll",
       "alt-c": "buffer_search::Dismiss"
-    }
-  },
-  {
-    "context": "ChangesList",
-    "bindings": {
-      "space": null,
-      "space g": "git_panel::Close",
-      "space l": "workspace::ToggleRightDock",
-      "space w": "outline_panel::ToggleFocus",
-      "space e": "project_panel::ToggleFocus",
-      "a": "git::ToggleStaged",
-      "A": "git::StageAll",
-      "c": "git::GenerateCommitMessage",
-      "C": "git::Commit",
-      "f": "git::Fetch",
-      "p": "git::Pull",
-      "P": "git::Push",
-      "ctrl-P": "git::ForcePush"
-    }
-  },
-  {
-    "context": "GitPanel",
-    "bindings": {
-      "alt-g": "git_panel::Close",
-      "alt-c": "git_panel::Close"
     }
   }
 ]

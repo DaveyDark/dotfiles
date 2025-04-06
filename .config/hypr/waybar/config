@@ -13,5 +13,5 @@
 
   "modules-left": ["cpu", "memory", "network"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["battery", "tray", "clock"],
+  "modules-right": ["battery", "pulseaudio", "tray", "clock"],
 }

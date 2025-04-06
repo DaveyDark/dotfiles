@@ -104,11 +104,12 @@
 
   "network": {
     "interval": 5,
+    "family": "ipv4",
     "format-wifi": "  {essid}",
-    "format-ethernet": "  {ipaddr}/{cidr}",
+    "format-ethernet": "  {ifname}",
     "format-linked": "  {ifname} (No IP)",
-    "format-disconnected": "睊 Disconnected",
-    "format-disabled": "睊 Disabled",
+    "format-disconnected": "❌ Disconnected",
+    "format-disabled": "❌ Disabled",
     "format-alt": " {bandwidthUpBytes} |  {bandwidthDownBytes}",
     "tooltip-format": "  {ifname} via {gwaddr}",
   },
@@ -157,8 +158,8 @@
     "scroll-step": 5.0,
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
-    "on-scroll-up": "~/.config/hypr/scripts/volume --inc",
-    "on-scroll-down": "~/.config/hypr/scripts/volume --dec",
+    "on-scroll-up": "swayosd-client --output-volume=raise",
+    "on-scroll-down": "swayosd-client --output-volume=lower",
     "smooth-scrolling-threshold": 1,
   },
 

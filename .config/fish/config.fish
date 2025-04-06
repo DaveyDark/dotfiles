@@ -69,7 +69,7 @@ alias ll='exa -l --color=always --group-directories-first --icons'  # long forma
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias prime='DRI_PRIME=1'
 alias primerun='DRI_PRIME=1 mangohud gamemoderun proton'
-alias upload='curl -F "file=@$argv" 0x0.st; echo '
+alias upload='curl -F "file=@$argv" http://0x0.st; echo '
 alias share='curl -F "file=@$argv" -Fexpires=24 http://0x0.st; echo '
 alias prun='STEAM_COMPAT_CLIENT_INSTALL_PATH=~/.local/share/Steam/ STEAM_COMPAT_DATA_PATH=~/.local/share/Steam/steamapps/compatdata/common/ ~/.local/share/Steam/steamapps/common/Proton\ 8.0/proton run'
 alias swaylock='swaylock \
@@ -88,6 +88,8 @@ alias swaylock='swaylock \
 	--grace 2 \
 	--fade-in 0.2'
 alias lvide='NEOVIDE_MULTIGRID=1 NEOVIDE_VSYNC=1 neovide-lunarvim'
+alias json='prettier --parser json'
+alias pixel='QT_QPA_PLATFORM=xcb emulator -avd Pixel8'
 
 # Lines of Code
 function loc
