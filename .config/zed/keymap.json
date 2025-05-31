@@ -192,7 +192,8 @@
     "context": "AssistantPanel",
     "bindings": {
       "alt-m": "assistant::ToggleModelSelector",
-      "alt-l": "workspace::ToggleRightDock"
+      "alt-l": "workspace::ToggleRightDock",
+      "ctrl-enter": "assistant::ConfirmCommand"
     }
   },
   {
@@ -228,6 +229,12 @@
     "bindings": {
       "alt-g": "git_panel::Close",
       "alt-c": "git_panel::Close"
+    }
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "ctrl-enter": "assistant::Assist"
     }
   }
 ]

@@ -1,0 +1,145 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "show_inline_completions": true,
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "vim_mode": true,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.75
+  },
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    },
+    "font_size": 14,
+    "detect_venv": {
+      "on": {
+        "directories": [".venv", "venv"],
+        "activate_script": "fish"
+      }
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Hacker Night Red Force",
+    "dark": "One Dark"
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
+  },
+  "relative_line_numbers": true,
+  "soft_wrap": "prefer_line",
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "bundles": [],
+        "settings": {
+          "java": {
+            "home": "/usr/lib/jvm/default/",
+            "errors": {
+              "incompleteClasspath": {
+                "severity": "warning"
+              }
+            },
+            "configuration": {
+              "updateBuildConfiguration": "interactive",
+              "maven": {
+                "userSettings": null
+              }
+            },
+            "trace": {
+              "server": "verbose"
+            },
+            "import": {
+              "gradle": {
+                "enabled": true
+              },
+              "maven": {
+                "enabled": true
+              },
+              "exclusions": [
+                "**/node_modules/**",
+                "**/.metadata/**",
+                "**/archetype-resources/**",
+                "**/META-INF/maven/**",
+                "/**/test/**"
+              ]
+            },
+            "jdt": {
+              "ls": {
+                "lombokSupport": {
+                  "enabled": false // Set this to true to enable lombok support
+                }
+              }
+            },
+            "referencesCodeLens": {
+              "enabled": true
+            },
+            "signatureHelp": {
+              "enabled": true
+            },
+            "implementationsCodeLens": {
+              "enabled": true
+            },
+            "format": {
+              "enabled": true
+            },
+            "saveActions": {
+              "organizeImports": true
+            },
+            "autobuild": {
+              "enabled": false
+            },
+            "completion": {
+              "favoriteStaticMembers": [
+                "org.junit.Assert.*",
+                "org.junit.Assume.*",
+                "org.junit.jupiter.api.Assertions.*",
+                "org.junit.jupiter.api.Assumptions.*",
+                "org.junit.jupiter.api.DynamicContainer.*",
+                "org.junit.jupiter.api.DynamicTest.*"
+              ],
+              "importOrder": ["java", "javax", "com", "org"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

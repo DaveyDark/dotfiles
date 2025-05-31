@@ -10,8 +10,14 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "show_inline_completions": true,
+  "show_edit_predictions": true,
   "assistant": {
+    "always_allow_tool_actions": false,
+    "default_profile": "ask",
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -43,7 +49,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Hacker Night Red Force",
+    "light": "One Dark",
     "dark": "One Dark"
   },
   "languages": {
@@ -64,5 +70,12 @@
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware"
+  },
+  "lsp": {
+    "java": {
+      "settings": {
+        "java.jdt.ls.lombokSupport.enabled:": true
+      }
+    }
   }
 }

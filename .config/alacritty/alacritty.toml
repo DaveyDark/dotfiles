@@ -53,6 +53,6 @@ history = 50000
 program = "/bin/fish"
 
 [window]
-opacity = 0.5
+opacity = 1
 
 [terminal]

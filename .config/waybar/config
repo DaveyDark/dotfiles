@@ -1,0 +1,104 @@
+{
+        "layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["clock","tray"],
+        "modules-center": ["hyprland/workspaces"],
+        "modules-right": ["bluetooth","network","pulseaudio","battery","custom/notification"],
+
+
+        "hyprland/workspaces": {
+            "format": "{icon}",
+            "format-icons": {
+                "active": "⬤",
+                "default": "",
+                "empty": ""
+            },
+            "all-outputs": true
+        },
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+        "clock": {
+            "format": "{:%I:%M %p} ",
+            "format-alt": "{:%d/%m/%Y} ",
+            "interval": 1,
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+                "format": {
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                },
+                "today-format": "<span color='#fAfBfC'><b>{}</b></span>"
+            },
+            "actions": {
+                "on-click": "tz_up"
+            }
+        },
+        "network": {
+            "format-wifi": "{essid} {icon}",
+            "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+            "format-ethernet": "󰈀 {ifname}",
+            "format-disconnected": "󰤮 Disconnected",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "wifi toggle",
+            "interval": 5
+        },
+        "bluetooth": {
+            "format-on": "󰂯",
+            "format-off": "BT-off",
+            "format-disabled": "󰂲",
+            "format-connected-battery": "{device_battery_percentage}% 󰂯",
+            "format-alt": "{device_alias} 󰂯",
+            "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+            "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+            "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+            "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
+            "on-click-right": "blueberry"
+        },
+        "pulseaudio": {
+            "format": "{volume}%  {icon}",
+            "format-bluetooth": "{volume}% {icon}",
+            "format-muted": "󰝟",
+            "format-icons": {
+                "headphone": ["󰕿", "󰖀", "󰕾"],
+                "hands-free": ["󰕿", "󰖀", "󰕾"],
+                "headset": ["󰕿", "󰖀", "󰕾"],
+                "phone": ["󰕿", "󰖀", "󰕾"],
+                "portable": ["󰕿", "󰖀", "󰕾"],
+                "car": ["󰕿", "󰖀", "󰕾"],
+                "default": ["󰕿", "󰖀", "󰕾"]
+            },
+            "scroll-step": 5,
+            "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+            "tooltip": true
+        },
+        "battery": {
+            "interval": 30,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "{capacity}% {icon}",
+            "format-charging": "{capacity}% 󰂄",
+            "format-plugged": "{capacity}% 󰂄 ",
+            "format-alt": "{time} {icon}",
+            "format-icons": [
+                "󰁻",
+                "󰁼",
+                "󰁾",
+                "󰂀",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        }
+}
