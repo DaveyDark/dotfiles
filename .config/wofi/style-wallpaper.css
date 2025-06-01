@@ -1,10 +1,10 @@
+{{REWRITTEN_CODE}}
 @import url('/home/daveydark/.cache/wal/colors-waybar.css');
 @define-color mauve  @color9;
 @define-color red  @color9;
 @define-color lavender  @color7;
 @define-color text  @color7;
 * {
-    all:unset;
     font-family: 'CodeNewRoman Nerd Font Mono', monospace;
     font-size: 18px;
     outline: none;
@@ -15,7 +15,7 @@
 
 window {
     all:unset;
-    padding: 20px;
+    padding: 10px;
     border-radius: 0px;
     background-color: alpha(@background,.5);
 }
@@ -25,12 +25,11 @@ window {
     border: none;
 
 }
-#outer-box {    
+#outer-box {
     border: none;
 }
 #scroll {
     margin: 0px;
-    padding: 30px;
     border: none;
 }
 #input {
@@ -69,8 +68,7 @@ window {
     outline: none;
 }
 #entry {
-    all:unset;
-    padding: 20 0 20 45;
+    padding: 20 20 20 80;
 }
 #entry arrow {
     border: none;
@@ -78,7 +76,7 @@ window {
 
 }
 #entry:selected {
-    border: none;
+    border: 2px solid @lavender;
     border-radius: 20px;
     background-color: alpha(@background,.2);
 }

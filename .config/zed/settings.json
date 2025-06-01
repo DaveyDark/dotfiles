@@ -11,7 +11,7 @@
     "edit_prediction_provider": "zed"
   },
   "show_edit_predictions": true,
-  "assistant": {
+  "agent": {
     "always_allow_tool_actions": false,
     "default_profile": "ask",
     "inline_assistant_model": {
@@ -33,13 +33,13 @@
   },
   "terminal": {
     "shell": {
-      "program": "fish"
+      "program": "zsh"
     },
     "font_size": 14,
     "detect_venv": {
       "on": {
         "directories": [".venv", "venv"],
-        "activate_script": "fish"
+        "activate_script": "default"
       }
     }
   },
@@ -49,7 +49,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "One Dark",
+    "light": "Pywal",
     "dark": "One Dark"
   },
   "languages": {

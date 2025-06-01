@@ -10,8 +10,14 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "show_inline_completions": true,
+  "show_edit_predictions": true,
   "assistant": {
+    "always_allow_tool_actions": false,
+    "default_profile": "ask",
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -27,13 +33,13 @@
   },
   "terminal": {
     "shell": {
-      "program": "fish"
+      "program": "zsh"
     },
     "font_size": 14,
     "detect_venv": {
       "on": {
         "directories": [".venv", "venv"],
-        "activate_script": "fish"
+        "activate_script": "zsh"
       }
     }
   },
@@ -43,7 +49,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Hacker Night Red Force",
+    "light": "Pywal",
     "dark": "One Dark"
   },
   "languages": {
@@ -66,79 +72,9 @@
     "coloring": "indent_aware"
   },
   "lsp": {
-    "jdtls": {
-      "initialization_options": {
-        "bundles": [],
-        "settings": {
-          "java": {
-            "home": "/usr/lib/jvm/default/",
-            "errors": {
-              "incompleteClasspath": {
-                "severity": "warning"
-              }
-            },
-            "configuration": {
-              "updateBuildConfiguration": "interactive",
-              "maven": {
-                "userSettings": null
-              }
-            },
-            "trace": {
-              "server": "verbose"
-            },
-            "import": {
-              "gradle": {
-                "enabled": true
-              },
-              "maven": {
-                "enabled": true
-              },
-              "exclusions": [
-                "**/node_modules/**",
-                "**/.metadata/**",
-                "**/archetype-resources/**",
-                "**/META-INF/maven/**",
-                "/**/test/**"
-              ]
-            },
-            "jdt": {
-              "ls": {
-                "lombokSupport": {
-                  "enabled": false // Set this to true to enable lombok support
-                }
-              }
-            },
-            "referencesCodeLens": {
-              "enabled": true
-            },
-            "signatureHelp": {
-              "enabled": true
-            },
-            "implementationsCodeLens": {
-              "enabled": true
-            },
-            "format": {
-              "enabled": true
-            },
-            "saveActions": {
-              "organizeImports": true
-            },
-            "autobuild": {
-              "enabled": false
-            },
-            "completion": {
-              "favoriteStaticMembers": [
-                "org.junit.Assert.*",
-                "org.junit.Assume.*",
-                "org.junit.jupiter.api.Assertions.*",
-                "org.junit.jupiter.api.Assumptions.*",
-                "org.junit.jupiter.api.DynamicContainer.*",
-                "org.junit.jupiter.api.DynamicTest.*"
-              ],
-              "importOrder": ["java", "javax", "com", "org"]
-            }
-          }
-        }
+    "java": {
+      "settings": {
+        "java.jdt.ls.lombokSupport.enabled:": true
       }
     }
   }

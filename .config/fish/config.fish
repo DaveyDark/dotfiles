@@ -111,4 +111,5 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 
 thefuck --alias | source
-source ~/.cache/wal/colors.fish
+# source ~/.cache/wal/colors.fish
+cat ~/.cache/wal/sequences
