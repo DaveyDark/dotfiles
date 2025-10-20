@@ -50,7 +50,7 @@ mods = "Super|Shift"
 history = 50000
 
 [terminal.shell]
-program = "/bin/fish"
+program = "/bin/zsh"
 
 [window]
 opacity = 1

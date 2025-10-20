@@ -9,7 +9,7 @@
   "control-center-width": 350,
   "control-center-margin-top": 8,
   "control-center-margin-bottom": 8,
-  "control-center-margin-right": 0,
+  "control-center-margin-right": 8,
   "control-center-margin-left": 8,
   "notification-2fa-action": true,
   "notification-inline-replies": true,
@@ -30,10 +30,10 @@
   "widgets": [
     "mpris",
     "title",
+    "dnd",
     "notifications",
     "volume",
-    "backlight",
-    "buttons-grid"
+    "backlight"
   ],
   "widget-config": {
     "title": {
@@ -71,12 +71,12 @@
 
         {
           "label": "",
-          "command": "wifi toggle"
+          "command": "wifi toggle",
+          "type": "toggle"
         },
         {
-          "label": "󰤄",
-          "command": "kitty nmtui",
-          "type": "toggle"
+          "label": "⏾",
+          "command": "swaync-client -cp && archlinux-logout"
         }
       ]
     }

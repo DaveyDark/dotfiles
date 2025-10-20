@@ -13,6 +13,7 @@ WOFI_CONFIG_WALLPAPER="$HOME/.config/wofi/wallpaper"
 WOFI_STYLE_WALLPAPER="$HOME/.config/wofi/style-wallpaper.css"
 # --- State File for Active Dynamic Wallpaper ---
 STATE_FILE="$HOME/.cache/current_active_dynamic_wallpaper_dir"
+SCRIPTS_DIRECTORY="$(dirname "${0}")"
 
 # --- Function to get the current wallpaper path from swww using 'swww query' ---
 get_current_swww_wallpaper() {
@@ -52,12 +53,7 @@ apply_theme_updates() {
     # --- End of Python script call ---
 
     # Update Zed
-    mkdir -p "$HOME/.config/zed/themes"
-    if [ -f "$PYWAL_CACHE_DIR/zed.json" ]; then
-        cp "$PYWAL_CACHE_DIR/zed.json" "$HOME/.config/zed/themes/pywal.json" || echo "Warning: Failed to copy zed theme."
-    else
-        echo "Warning: $PYWAL_CACHE_DIR/zed.json not found."
-    fi
+    $SCRIPTS_DIRECTORY/generate_zed_theme.sh
 
     # Reload SwayNC
     if command -v swaync-client &> /dev/null; then

@@ -1,7 +1,7 @@
 server:
   port: 6969
 
-mail:
-  enabled: true
-  provider: smtp
-  sender: devesh97531 <devesh97531@gmail.com>
+# mail:
+#   enabled: true
+#   provider: smtp
+#   sender: devesh97531 <devesh97531@gmail.com>

@@ -32,7 +32,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
 
 # Which plugins would you like to load?
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zoxide starship copybuffer copypath copyfile dirhistory fzf web-search fzf-tab sudo jsontools colorize)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search zoxide starship copybuffer copypath copyfile dirhistory fzf web-search fzf-tab jsontools colorize sudo)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
@@ -45,6 +45,7 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+  export VISUAL='nvim'
 fi
 
 # History search config
@@ -83,6 +84,34 @@ loc() {
     find . -name "*.$1" -print0 | xargs -0 wc -l
 }
 
+function whereis-command() {
+    emulate -L zsh
+    setopt extendedglob
+
+    local cmd=${BUFFER%% *}
+    [[ -z $cmd ]] && return 0
+
+    local message=""
+
+    if alias $cmd >/dev/null 2>&1; then
+        message="alias: $(alias $cmd)"
+    elif whence -w $cmd | grep -q 'function'; then
+        message="function: $(whence -f $cmd | head -n 1)"
+    elif whence -w $cmd | grep -q 'builtin'; then
+        message="$cmd is a shell builtin"
+    elif local path=$(command -v $cmd); then
+        message="binary: $path"
+    else
+        message="$cmd: not found"
+    fi
+
+    # Show in ZLE's message area (non-blocking)
+    zle -M "$message"
+}
+
+zle -N whereis-command
+bindkey '^[w' whereis-command
+
 ## Aliases
 alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
@@ -100,7 +129,6 @@ alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pac
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # aliases
-alias mkdirc='mkdir "$1" && cd "$1"' # $argv[1] becomes "$1" in Zsh functions/aliases. Use "$@" for all args.
 alias ls='eza -al --color=always --group-directories-first --icons=always'
 alias la='eza -a --color=always --group-directories-first --icons=always'
 alias ll='eza -l --color=always --group-directories-first --icons=always'

@@ -1,8 +1,8 @@
 [config]
 allow_images=true
 show=drun
-width=1280
-height=720
+width=1024
+height=640
 always_parse_args=true
 show_all=true
 term=kitty

@@ -7,27 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "tab_bar": {
+    "show": true
+  },
+  "icon_theme": "Catppuccin Latte",
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "auto_update": false,
+  "auto_update_extensions": {
+    "*": false
+  },
   "show_edit_predictions": true,
   "agent": {
-    "always_allow_tool_actions": false,
-    "default_profile": "ask",
+    "play_sound_when_agent_done": true,
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-sonnet-4"
     },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    },
-    "version": "2"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
   },
   "vim_mode": true,
   "base_keymap": "VSCode",
-  "ui_font_size": 16,
-  "buffer_font_size": 14,
+  "ui_font_size": 15,
+  "buffer_font_size": 13.0,
   "active_pane_modifiers": {
     "inactive_opacity": 0.75
   },
@@ -35,7 +43,10 @@
     "shell": {
       "program": "zsh"
     },
-    "font_size": 14,
+    "font_size": 12,
+    "toolbar": {
+      "breadcrumbs": false
+    },
     "detect_venv": {
       "on": {
         "directories": [".venv", "venv"],
@@ -49,7 +60,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Pywal",
+    "light": "Catppuccin Espresso (Blur)",
     "dark": "One Dark"
   },
   "languages": {
